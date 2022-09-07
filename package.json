@@ -1,0 +1,27 @@
+{
+  "name": "contact-card",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start": "cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "client": "cd client && npm start",
+    "install": "concurrently \"cd client && npm install\" \"cd server && npm install\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinpezley/contact-card.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dustinpezley/contact-card/issues"
+  },
+  "homepage": "https://github.com/dustinpezley/contact-card#readme",
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
