@@ -8,6 +8,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   mode: 'development',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      title: 'Webpack Plugin',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -30,10 +36,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      title: 'Webpack Plugin',
-    }),
-  ],
 };
