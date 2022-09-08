@@ -15,6 +15,7 @@ import Dog from '../images/dog.png';
 
 // Add images on load
 window.addEventListener('load', function () {
+  initDb();
   document.getElementById('logo').src = Logo;
   document.getElementById('bearThumbnail').src = Bear;
   document.getElementById('dogThumbnail').src = Dog;
