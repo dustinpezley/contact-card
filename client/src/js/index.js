@@ -20,6 +20,25 @@ if ('serviceworker' in navigator) {
   });
 }
 
+// Install button
+const installBtn = document.getElementById('installBtn');
+
+// Makes install button visible if not installed
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  installBtn.style.visibility = 'visible';
+
+  installBtn.addEventListener('click', () => {
+    event.prompt();
+    installBtn.setAttribute('disabled', true);
+    installBtn.textContent = 'Installed!';
+  });
+});
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('👍', 'appinstalled', event);
+});
+
 // Add images on load
 window.addEventListener('load', function () {
   initDb();
